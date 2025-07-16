@@ -1,0 +1,188 @@
+:root {
+    --color-dark-bg: #2d2d2d;
+    --color-light-bg: #f8f8f8;
+    --color-accent: #c07212;
+    --color-text-light: #ffffff;
+    --color-text-dark: #333333;
+    --color-text-secondary: #555555;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    background-color: #ffffff;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.container { 
+    width: 90%;
+    /* Ajustado para um design de 1440px */
+    max-width: 1280px; 
+    margin: 0 auto; 
+}
+
+h1, h2 { 
+    font-family: var(--font-heading); 
+}
+
+/* --- SEÇÕES INDIVIDUAIS --- */
+
+/* --- ESTILOS DA SEÇÃO HERO ATUALIZADOS --- */
+
+.hero-section {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    padding: 120px 0;
+    /* Adicionamos flexbox para centralizar nosso bloco de texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Esta é a nova regra para o nosso "agrupador" de texto */
+.hero-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    /* Ajustado para a largura exata do Figma */
+    max-width: 1024px; 
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: left;
+    /* Adicionamos esta propriedade para evitar a quebra de linha */
+    white-space: nowrap; 
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #dcdcdc;
+    letter-spacing: 0.5px;
+    text-align: left; /* Reforçando o alinhamento */
+    margin-left: 0; /* Removemos a margem antiga que não funcionou */
+}
+
+.stats-section {
+    background-color: var(--color-light-bg);
+    padding: 80px 0;
+    /* Largura total conforme a caixa azul de 1440x229 */
+    width: 100%;
+}
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.stat-item .stat-number { 
+    font-size: 2.8rem; 
+    font-weight: 700; 
+    color: var(--color-text-dark);
+}
+.stat-item .stat-label { 
+    font-size: 0.9rem; /* Ajuste fino no tamanho */
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-section { 
+    padding: 100px 0; 
+}
+.about-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 80px; /* Aumentando o espaço entre texto e imagem */
+    flex-wrap: wrap; 
+}
+.about-text { 
+    flex: 1; 
+    min-width: 320px; 
+}
+.about-text h2 { 
+    font-size: 2.8rem; /* Ajuste fino no tamanho */
+    color: var(--color-text-dark); 
+    margin-bottom: 25px; 
+}
+.about-text p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+.about-image { 
+    flex: 1; 
+    min-width: 320px; 
+}
+.about-image img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12); 
+}
+
+.contact-section {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    padding: 100px 0;
+    text-align: center;
+}
+.contact-section h2 { 
+    font-size: 1.8rem; 
+    margin-bottom: 40px; 
+    font-weight: 400;
+}
+.contact-form { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+    max-width: 500px; 
+    margin: 0 auto; 
+}
+.contact-form input { 
+    width: 100%; 
+    padding: 18px; /* Aumentando o padding */
+    border: 1px solid #555;
+    background-color: #fff;
+    border-radius: 5px; 
+    font-size: 1rem; 
+    font-family: var(--font-body);
+}
+.contact-form button {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 5px;
+    padding: 18px 50px; /* Aumentando o padding */
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+.contact-form button:hover { 
+    background-color: #a4610f; 
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 2.5rem; }
+    .about-text h2 { font-size: 2.2rem; }
+    .stat-item .stat-number { font-size: 2.2rem; }
+    .about-container { flex-direction: column; }
+}
